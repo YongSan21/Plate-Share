@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<ToolBar xmlns="http://javafx.com/javafx/21.0.1"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="san.view.NavBarController"
+         fx:id="navBar"
+         styleClass="app-bar"
+         prefHeight="60.0">
+
+    <!-- Brand/Logo Section -->
+    <HBox alignment="CENTER_LEFT" spacing="8">
+        <Label styleClass="h2" text="🍽️ Plate Share" style="-fx-text-fill: -fx-primary;" />
+    </HBox>
+
+    <!-- Spacer to push navigation to center -->
+    <Pane prefWidth="40.0" />
+
+    <!-- Main Navigation -->
+    <HBox alignment="CENTER" spacing="4">
+        <Button fx:id="homeBtn"
+                text="Home"
+                onAction="#goHome"
+                prefWidth="80.0" />
+
+        <Button fx:id="donateBtn"
+                text="Donate"
+                onAction="#goDonate"
+                prefWidth="80.0" />
+
+        <Button fx:id="historyBtn"
+                text="History"
+                onAction="#goHistory"
+                prefWidth="80.0" />
+        
+    </HBox>
+
+    <!-- Flexible spacer to push logout to the right -->
+    <Pane HBox.hgrow="ALWAYS" />
+
+    <!-- User Actions -->
+    <HBox alignment="CENTER_RIGHT" spacing="12">
+        <Label styleClass="body-text" text="Welcome back!" style="-fx-text-fill: -fx-text-secondary;" />
+        <Button fx:id="logoutBtn"
+                text="Logout"
+                onAction="#logout"
+                styleClass="btn-logout"
+                prefWidth="90.0" />
+    </HBox>
+</ToolBar>

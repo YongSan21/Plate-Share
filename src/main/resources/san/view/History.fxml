@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="550.0" prefWidth="800.0"
+            styleClass="history-container"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="san.view.HistoryController">
+
+    <center>
+        <VBox styleClass="history-table-container" spacing="20" alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="40" right="40" bottom="40" left="40" />
+            </BorderPane.margin>
+
+            <!-- Header Section -->
+            <VBox spacing="8" alignment="CENTER">
+                <Label styleClass="section-title" text="Donation History" />
+                <Label styleClass="body-text" style="-fx-text-fill: -fx-text-secondary;"
+                       text="Track all your generous contributions to the community" />
+            </VBox>
+
+            <!-- Statistics Cards (Optional) -->
+            <VBox spacing="12" alignment="CENTER">
+                <VBox styleClass="card" spacing="8" alignment="CENTER" prefWidth="600.0">
+                    <Label styleClass="h3" text="Your Impact Summary" />
+                    <Label styleClass="body-text" textAlignment="CENTER"
+                           text="Thank you for your continued support in fighting hunger in our community" />
+                </VBox>
+            </VBox>
+
+            <!-- History Table -->
+            <TableView fx:id="table" prefHeight="300.0" prefWidth="700.0">
+                <columns>
+                    <TableColumn fx:id="timeColumn" prefWidth="180.0" text="Date and Time" />
+                    <TableColumn fx:id="amountColumn" prefWidth="140.0" text="Amount (RM)" />
+                    <TableColumn fx:id="methodColumn" prefWidth="160.0" text="Payment Method" />
+                    <TableColumn fx:id="donorColumn" prefWidth="180.0" text="User ID" />
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+
+            <!-- Footer Information -->
+            <VBox spacing="4" alignment="CENTER">
+                <Label styleClass="caption"
+                       text="For questions about your donations, contact support@plateshare.org" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

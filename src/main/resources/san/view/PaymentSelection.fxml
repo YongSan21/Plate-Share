@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="500.0" prefWidth="700.0" styleClass="application" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="san.view.PaymentSelectionController">
+
+    <center>
+        <VBox alignment="CENTER" prefWidth="500.0" spacing="24" styleClass="card-elevated" BorderPane.alignment="CENTER">
+
+            <!-- Payment Header -->
+            <VBox alignment="CENTER" spacing="8">
+                <Label styleClass="section-title" text="Complete Your Donation" />
+                <Label fx:id="amountLabel" styleClass="total-amount" text="Total: RM 0.00" />
+                <Label style="-fx-text-fill: -fx-text-secondary;" styleClass="body-text" text="Choose your preferred payment method below" />
+            </VBox>
+
+            <!-- Payment Method Selection -->
+            <VBox alignment="CENTER" spacing="16">
+                <Label styleClass="h3" text="Payment Method" />
+
+                <!-- Radio Button Options -->
+                <VBox alignment="CENTER_LEFT" spacing="12">
+                    <fx:define>
+                        <ToggleGroup fx:id="paymentGroup" />
+                    </fx:define>
+
+                    <RadioButton fx:id="rbOnline" styleClass="radio-button" text="💳 Online Banking">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="paymentGroup" />
+                  </toggleGroup></RadioButton>
+
+                    <RadioButton fx:id="rbWallet" styleClass="radio-button" text="📱 eWallet" toggleGroup="$paymentGroup" />
+                </VBox>
+
+                <!-- Payment Provider Selection -->
+                <VBox alignment="CENTER" spacing="12">
+                    <ComboBox fx:id="bankCombo" managed="false" prefWidth="250.0" promptText="Select your bank" styleClass="combo-box" visible="false" />
+
+                    <ComboBox fx:id="walletCombo" managed="false" prefWidth="250.0" promptText="Select eWallet provider" styleClass="combo-box" visible="false" />
+                </VBox>
+            </VBox>
+
+            <!-- Security Information -->
+            <VBox alignment="CENTER" spacing="8" style="-fx-background-radius: 8px; -fx-padding: 16px;" styleClass="bg-info">
+                <Label styleClass="caption" text="🔒 Secure Payment" />
+                <Label styleClass="caption" text="Your payment is processed securely using industry-standard encryption" textAlignment="CENTER" />
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER" spacing="16">
+                <Button onAction="#goBack" prefHeight="26.0" prefWidth="166.0" styleClass="btn-secondary" text="Back to Cart" />
+
+                <Button fx:id="payBtn" disable="true" onAction="#payNow" prefHeight="26.0" prefWidth="233.0" styleClass="btn-cta" text="Complete Donation" />
+            </HBox>
+
+        </VBox>
+    </center>
+</BorderPane>

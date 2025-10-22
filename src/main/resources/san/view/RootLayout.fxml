@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="san.view.RootLayoutController"
+            prefWidth="800.0" prefHeight="600.0">
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <MenuBar>
+                <menus>
+                    <Menu text="_File">
+                        <items>
+                            <MenuItem fx:id="homeItem" text="_Home" onAction="#goHomeFromMenu"></MenuItem>
+                            <MenuItem fx:id="donateItem" text="_Donate" onAction="#goDonateFromMenu"></MenuItem>
+                            <MenuItem fx:id="historyItem" text="_History" onAction="#goHistoryFromMenu"></MenuItem>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="_Close" onAction="#handleClose">
+                                <accelerator>
+                                    <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                </accelerator>
+                            </MenuItem>
+                        </items>
+                    </Menu>
+                    <Menu text="_Help">
+                        <items>
+                            <MenuItem text="_About" onAction="#handleAbout"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <fx:include source="NavBar.fxml" fx:id="nav"/>
+        </VBox>
+    </top>
+</BorderPane>
+

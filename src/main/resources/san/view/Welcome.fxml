@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.MediaView?>
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="san.view.WelcomeController"
+           prefWidth="920" prefHeight="730">
+
+    <!-- Full-bleed video with explicit sizing -->
+    <MediaView fx:id="mediaView"
+               preserveRatio="false"
+               StackPane.alignment="CENTER"/>
+
+    <!-- Centered overlay copy -->
+    <VBox alignment="CENTER" spacing="14" StackPane.alignment="CENTER" styleClass="splash-overlay">
+        <Label text="Welcome to Plate Share" styleClass="display-title" />
+        <Button text="START" onAction="#start" styleClass="btn-cta" prefWidth="160"/>
+    </VBox>
+</StackPane>

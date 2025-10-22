@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="550.0" prefWidth="800.0" styleClass="application" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="san.view.HomeController">
+
+    <center>
+        <!-- Hero Section with Background -->
+        <StackPane styleClass="hero-section" BorderPane.alignment="CENTER">
+
+            <!-- Hero Content Container -->
+            <VBox alignment="CENTER" maxWidth="815.0" prefHeight="550.0" prefWidth="815.0" spacing="24" styleClass="hero-content" StackPane.alignment="CENTER">
+
+                <!-- Main Hero Text -->
+                <VBox alignment="CENTER" spacing="16">
+                    <Label styleClass="display-title" text="Make a Difference" textAlignment="CENTER" />
+
+                    <Label maxWidth="500.0" styleClass="lead" text="Join Plate Share in fighting hunger and food waste. Every donation helps provide meals to those in need while reducing environmental impact." textAlignment="CENTER" wrapText="true" />
+                </VBox>
+
+                <!-- Action Buttons -->
+                <VBox alignment="CENTER" spacing="12">
+                    <Button onAction="#goDonate" prefHeight="26.0" prefWidth="237.0" styleClass="btn-cta" text="START DONATING" />
+
+                    <Label styleClass="caption" text="Together, we can end hunger" textAlignment="CENTER" />
+                </VBox>
+            </VBox>
+
+            <!-- Impact Statistics (Optional) -->
+            <VBox alignment="BOTTOM_CENTER" mouseTransparent="true" pickOnBounds="false" spacing="8" StackPane.alignment="BOTTOM_CENTER">
+                <StackPane.margin>
+                    <Insets bottom="40" />
+                </StackPane.margin>
+
+                <VBox alignment="CENTER" prefWidth="300.0" spacing="8" style="-fx-background-color: rgba(255,255,255,0.9);" styleClass="card">
+                    <Label styleClass="h3" text="Community Impact" textAlignment="CENTER" />
+                    <Label styleClass="body-text" text="Join thousands of donors making a difference in our community" textAlignment="CENTER" />
+                </VBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
